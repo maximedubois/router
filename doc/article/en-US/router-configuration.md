@@ -410,8 +410,8 @@ A pipeline step must be an object that contains a `run(navigationInstruction, ne
         config.addPipelineStep('authorize', AuthorizeStep);
         config.map([
           { route: ['', 'home'],       name: 'home',       moduleId: 'home/index' },
-          { route: 'users',            name: 'users',      moduleId: 'users/index',   nav: true },
-          { route: 'users/:id/detail', name: 'userDetail', moduleId: 'users/detail' },
+          { route: 'users',            name: 'users',      moduleId: 'users/index',   nav: true, settings: { auth: true } },
+          { route: 'users/:id/detail', name: 'userDetail', moduleId: 'users/detail', settings: { auth: true } },
           { route: 'files/*path',       name: 'files',      moduleId: 'files/index',   href:'#files',   nav: true }
         ]);
       }
